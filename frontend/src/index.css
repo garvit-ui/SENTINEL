@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 225 30% 4%;
+        --foreground: 220 13% 91%;
+        --card: 224 25% 7%;
+        --card-foreground: 220 13% 91%;
+        --popover: 224 25% 7%;
+        --popover-foreground: 220 13% 91%;
+        --primary: 38 92% 50%;
+        --primary-foreground: 224 47% 6%;
+        --secondary: 224 25% 11%;
+        --secondary-foreground: 220 13% 91%;
+        --muted: 224 20% 12%;
+        --muted-foreground: 220 9% 62%;
+        --accent: 38 92% 50%;
+        --accent-foreground: 224 47% 6%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 100% / 0.08;
+        --input: 0 0% 100% / 0.12;
+        --ring: 38 92% 50%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-white/[0.08];
+    }
+    html {
+        scroll-behavior: auto;
+    }
+    body {
+        @apply bg-[#08090E] text-zinc-200 font-sans antialiased;
+        font-optical-sizing: auto;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
+
+/* Sentinel custom utilities */
+.font-display {
+    font-family: 'Outfit', sans-serif;
+}
+
+.grid-bg {
+    background-image:
+        linear-gradient(to right, rgba(31, 41, 55, 0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(31, 41, 55, 0.18) 1px, transparent 1px);
+    background-size: 4rem 4rem;
+}
+
+.hero-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, rgba(8, 9, 14, 0) 70%);
+}
+
+.scanlines {
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.18),
+        rgba(0, 0, 0, 0.18) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+}
+
+.text-gradient-amber {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card-shine {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+    animation: marquee-scroll 42s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
+    50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+}
+
+.pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes alert-glow {
+    0%, 100% { box-shadow: 0 0 24px rgba(245, 158, 11, 0.12); }
+    50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.28); }
+}
+
+.alert-glow {
+    animation: alert-glow 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track, .pulse-dot, .alert-glow {
+        animation: none;
+    }
+}

@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "project_name": "Sentinel",
+    "app_type": "landing_page",
+    "category": "Developer Tool SaaS",
+    "target_audience": "Software Engineers, Tech Leads, CTOs, & Product Ops Teams in India using Indian Payment/Logistics/SMS APIs",
+    "theme_archetype": "Dark-mode-first with Terminal Amber Highlights (Awwwards/Linear/Vercel Quality)",
+    "file_extension": ".js",
+    "design_principles": [
+      "Tactical Terminal Precision: High contrast, dark void background (#08090E) with intense alert-amber (#F59E0B) focus.",
+      "Zero AI-Slop / Anti-Pattern: NO Inter, NO Space Grotesk, NO fake user counts, NO fake testimonials, NO generic hero layouts.",
+      "Content as Truth: Real Indian API horror stories (Razorpay silent webhook drops, Shiprocket unannounced tier limits, Cashfree parameter breaks, RBI ₹15,000 mandate failures).",
+      "Single Dominant Action: Email waitlist capture is the sole focal point, frictionless and uninhibited by competing CTAs.",
+      "Kinetic & Purposeful Motion: Masked line-by-line typography reveals, slow editorial marquee, smooth Lenis inertia scrolling, and live pulse telemetry cards."
+    ]
+  },
+  "typography": {
+    "heading_font": {
+      "name": "Outfit",
+      "google_font_url": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap",
+      "usage": "H1, H2, H3, Hero Kinetic Text, Manifesto Chapter Titles",
+      "letter_spacing": "tracking-tight (-0.03em)",
+      "weight_default": "font-bold (700)"
+    },
+    "body_font": {
+      "name": "DM Sans",
+      "google_font_url": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap",
+      "usage": "Body copy, subtitles, founder letter, problem descriptions",
+      "line_height": "leading-relaxed"
+    },
+    "mono_font": {
+      "name": "JetBrains Mono",
+      "google_font_url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap",
+      "usage": "Code snippets, status badges, provider pills, timestamp indicators, terminal alert logs, JSON payload diffs",
+      "letter_spacing": "tracking-wider"
+    },
+    "scale_hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white",
+      "h3_card": "text-xl sm:text-2xl font-semibold text-zinc-100",
+      "body_lg": "text-base sm:text-lg text-zinc-400 leading-relaxed",
+      "body_base": "text-sm sm:text-base text-zinc-400 leading-normal",
+      "mono_label": "font-mono text-xs uppercase tracking-[0.2em] text-amber-400/90",
+      "mono_code": "font-mono text-xs sm:text-sm text-zinc-300 bg-zinc-950/80 px-2 py-1 rounded border border-zinc-800"
+    },
+    "forbidden_fonts": [
+      "Inter",
+      "Space Grotesk",
+      "Roboto",
+      "Open Sans"
+    ]
+  },
+  "color_system": {
+    "canvas_bg": "#08090E",
+    "surface_elevation_1": "#0F111A",
+    "surface_elevation_2": "#161925",
+    "surface_elevation_3": "#1E2233",
+    "amber_primary": "#F59E0B",
+    "amber_glow": "rgba(245, 158, 11, 0.25)",
+    "amber_hover": "#D97706",
+    "amber_light": "#FDE68A",
+    "crimson_alert": "#EF4444",
+    "emerald_healthy": "#10B981",
+    "cyan_telemetry": "#06B6D4",
+    "text_high_contrast": "#F9FAFB",
+    "text_muted": "#9CA3AF",
+    "text_dimmed": "#6B7280",
+    "border_hairline": "rgba(255, 255, 255, 0.08)",
+    "border_subtle": "rgba(255, 255, 255, 0.12)",
+    "border_amber_accent": "rgba(245, 158, 11, 0.4)",
+    "gradients": {
+      "hero_radial_glow": "radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, rgba(8, 9, 14, 0) 70%)",
+      "card_amber_shine": "linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%)",
+      "text_gradient_amber": "linear-gradient(180deg, #FFFFFF 0%, #F59E0B 100%)",
+      "scanline_effect": "repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px)"
+    }
+  },
+  "visual_decorations": {
+    "crt_scanlines": "pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] opacity-25 z-10",
+    "glass_panel": "backdrop-blur-xl bg-[#0F111A]/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+    "tracing_beam_border": "relative rounded-xl border border-amber-500/30 before:absolute before:inset-0 before:rounded-xl before:p-[1px] before:bg-gradient-to-r before:from-amber-500/50 before:via-transparent before:to-amber-500/20",
+    "telemetry_dot_pulsing": "relative flex h-2 w-2 rounded-full bg-amber-500 animate-ping",
+    "grid_background_svg": "bg-[linear-gradient(to_right,#1f293712_1px,transparent_1px),linear-gradient(to_bottom,#1f293712_1px,transparent_1px)] bg-[size:4rem_4rem]"
+  },
+  "layout_strategy": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "spacing_scale": {
+      "section_vertical_padding": "py-20 sm:py-28 lg:py-36",
+      "bento_gap": "gap-6 lg:gap-8",
+      "internal_card_padding": "p-6 sm:p-8"
+    },
+    "bento_grid_structure": {
+      "hero_split": "grid grid-cols-1 lg:grid-cols-12 gap-12 items-center",
+      "problem_3_col": "grid grid-cols-1 md:grid-cols-3 gap-8",
+      "how_it_works_4_step": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+      "built_for_india_asymmetric": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch"
+    }
+  },
+  "section_by_section_blueprints": {
+    "1_navbar": {
+      "section_id": "navbar",
+      "layout": "Fixed top header with backdrop glassmorphism",
+      "style": "bg-[#08090E]/80 backdrop-blur-xl border-b border-white/10 z-50 py-4 px-6 sm:px-12 flex justify-between items-center",
+      "elements": [
+        "Logo left: Text 'SENTINEL' in Outfit bold with glowing amber status dot icon & mono badge 'DEV-MONITOR v1.0'",
+        "Nav links middle (hidden on mobile, visible desktop): Product (#problem), How it works (#how-it-works), Built for India (#built-for-india), Waitlist (#waitlist)",
+        "CTA button right: 'Join Waitlist' (Pill button with amber outline & glow on hover)",
+        "Mobile Sheet: Responsive hamburger drawer with mono menu items"
+      ],
+      "testids": {
+        "nav_bar": "sentinel-navbar",
+        "nav_logo": "nav-logo-link",
+        "nav_product_link": "nav-product-link",
+        "nav_how_it_works_link": "nav-how-it-works-link",
+        "nav_built_for_india_link": "nav-built-for-india-link",
+        "nav_waitlist_link": "nav-waitlist-link",
+        "nav_cta_button": "nav-cta-join-waitlist"
+      }
+    },
+    "2_hero": {
+      "section_id": "hero",
+      "layout": "Asymmetric Split (Text Column 7 cols + Mock Live Alert Dashboard 5 cols)",
+      "content": {
+        "headline": "Your Razorpay integration just broke. You'll find out in 3 hours. We'll tell you in 30 seconds.",
+        "subheadline": "Real-time monitoring engine specifically built for Indian API stack — Razorpay, PhonePe, Cashfree, Shiprocket, Delhivery, MSG91 & Gupshup. Catch silent webhook drops, SDK error masking, and undocumented tier limits before revenue bleeds.",
+        "primary_cta": {
+          "type": "Waitlist Email Capture Form",
+          "placeholder": "Enter your dev email (e.g., alex@company.in)",
+          "button_text": "Get Early Access",
+          "helper_text": "Built by developers who got burned by silent API failures too."
+        }
+      },
+      "hero_mock_dashboard": {
+        "title": "LIVE INCIDENT TELEMETRY",
+        "subtitle": "Active API Watchers (India Region: bom1-mumbai)",
+        "sample_alerts": [
+          {
+            "status": "CRITICAL",
+            "provider": "Razorpay",
+            "event": "Webhook Signature Verification Failed",
+            "details": "Error: HMAC SHA256 signature mismatch on pay_O0k8Xz2q (Silent 200 OK dropped)",
+            "timestamp": "2 min ago",
+            "impact": "High (₹42,500 recurring order stalled)"
+          },
+          {
+            "status": "WARNING",
+            "provider": "Shiprocket",
+            "event": "Undocumented Tier Exceeded",
+            "details": "API returned 'deliverable: false' without error code for pincode 560001",
+            "timestamp": "8 min ago",
+            "impact": "Medium (Logistics Dispatch Blocked)"
+          },
+          {
+            "status": "CRITICAL",
+            "provider": "Cashfree",
+            "event": "SDK Breaking Parameter Change",
+            "details": "v3.2 SDK swallowing 422 Unprocessable Entity payload silently",
+            "timestamp": "14 min ago",
+            "impact": "High (Checkout Modal Unresponsive)"
+          },
+          {
+            "status": "CRITICAL",
+            "provider": "Razorpay",
+            "event": "RBI Mandate Cap Exception",
+            "details": "Recurring auto-debit > ₹15,000 failing without webhook retry event",
+            "timestamp": "21 min ago",
+            "impact": "High (Subscription Billing Dropped)"
+          }
+        ]
+      },
+      "testids": {
+        "hero_section": "hero-section",
+        "hero_headline": "hero-headline",
+        "hero_subheadline": "hero-subheadline",
+        "hero_email_input": "hero-email-input",
+        "hero_submit_button": "hero-submit-button",
+        "hero_live_alert_card": "hero-live-alert-card",
+        "hero_secondary_note": "hero-secondary-note"
+      }
+    },
+    "3_the_problem": {
+      "section_id": "problem",
+      "headline": "Indian APIs don't warn you before they break you",
+      "subheadline": "Global monitoring tools (Datadog, Sentry, New Relic) check HTTP 500 status codes. They don't know that Razorpay returns 200 OK with an error body, or that Shiprocket silently marks addresses as non-deliverable.",
+      "columns": [
+        {
+          "title": "Silent Webhook Failures",
+          "tag": "PAIN 01",
+          "provider": "Razorpay & PhonePe",
+          "description": "Webhooks fail signature verification silently or fail to retry after temporary server blips. Your database never updates, orders remain pending, and users get charged without fulfillment."
+        },
+        {
+          "title": "Undocumented Tier Restrictions",
+          "tag": "PAIN 02",
+          "provider": "Shiprocket & Delhivery",
+          "description": "Logistics APIs suddenly return 'deliverable: false' for valid pin codes without any HTTP error code or documentation when account rate limits or undisclosed tier rules kick in."
+        },
+        {
+          "title": "SDK Breaking Changes & RBI Mandates",
+          "tag": "PAIN 03",
+          "provider": "Cashfree & Razorpay",
+          "description": "Minor SDK upgrades swallow error objects or break on parameter format tweaks. RBI e-mandate rules cap recurring charges over ₹15,000 without sending structured failure webhooks."
+        }
+      ],
+      "testids": {
+        "problem_section": "problem-section",
+        "problem_card_1": "problem-card-silent-webhooks",
+        "problem_card_2": "problem-card-tier-limits",
+        "problem_card_3": "problem-card-sdk-breaking-changes"
+      }
+    },
+    "4_how_it_works": {
+      "section_id": "how-it-works",
+      "headline": "Zero SDK Integration. 4 Minutes to Full Telemetry.",
+      "subheadline": "Numbered manifesto of how Sentinel watches your Indian API ecosystem round the clock.",
+      "steps": [
+        {
+          "step_number": "01",
+          "title": "Connect Provider Keys",
+          "desc": "Add read-only API credentials or route webhooks through Sentinel's ultra-low latency proxy (mumbai-node)."
+        },
+        {
+          "step_number": "02",
+          "title": "We Monitor Payloads & Rules",
+          "desc": "Sentinel parses response bodies, signature headers, and state shifts specifically modeled for Razorpay, Cashfree, Shiprocket & MSG91."
+        },
+        {
+          "step_number": "03",
+          "title": "Get Alerted in 30 Seconds",
+          "desc": "Receive instant Telegram, Slack, WhatsApp, or PagerDuty alerts with exact payload diffs before customer support ticket fires."
+        },
+        {
+          "step_number": "04",
+          "title": "Fix Before It Costs You",
+          "desc": "Follow step-by-step resolution playbooks built by engineers who have debugged these exact Indian gateway edge cases."
+        }
+      ],
+      "testids": {
+        "how_it_works_section": "how-it-works-section",
+        "step_1": "step-card-01",
+        "step_2": "step-card-02",
+        "step_3": "step-card-03",
+        "step_4": "step-card-04"
+      }
+    },
+    "5_built_for_indian_developers": {
+      "section_id": "built-for-india",
+      "headline": "Global tools don't cover Indian providers. Sentinel lives here.",
+      "subheadline": "Built from the ground up for the unique quirks, regulatory mandates (RBI, NPCI, TRAI), and API patterns of Indian SaaS and D2C tech stacks.",
+      "provider_pills": [
+        {
+          "name": "Razorpay",
+          "category": "Payments",
+          "monitored": "Webhooks, SDK Errors, RBI ₹15k Mandates"
+        },
+        {
+          "name": "PhonePe",
+          "category": "UPI & Gateway",
+          "monitored": "Callback Latency & Pending Status Polling"
+        },
+        {
+          "name": "Cashfree",
+          "category": "Payouts & Gateway",
+          "monitored": "Bank Batch Drops & SDK Parameter Breaks"
+        },
+        {
+          "name": "Shiprocket",
+          "category": "Logistics",
+          "monitored": "Tier Restrictions & Silent Delivery Flags"
+        },
+        {
+          "name": "Delhivery",
+          "category": "Express Shipping",
+          "monitored": "Waybill Generation Failures & Token Expiry"
+        },
+        {
+          "name": "MSG91",
+          "category": "SMS & OTP",
+          "monitored": "DLT Template Failures & Vendor Route Drops"
+        },
+        {
+          "name": "Gupshup",
+          "category": "WhatsApp Business API",
+          "monitored": "Session Window Expirations & Media Payload Errors"
+        }
+      ],
+      "editorial_marquee": {
+        "items": [
+          "RAZORPAY WEBHOOK VERIFICATION",
+          "PHONEPE UPI CALLBACK TIMEOUTS",
+          "CASHFREE PAYOUT BATCH SILENT FAILURES",
+          "SHIPROCKET PINCODE UNEXPLAINED BLOCK",
+          "DELHIVERY TOKEN EXPIRY DROPS",
+          "MSG91 DLT REJECTION ALERTS",
+          "GUPSHUP WHATSAPP API EXERCISES"
+        ]
+      },
+      "testids": {
+        "built_for_india_section": "built-for-india-section",
+        "provider_pill_grid": "provider-pill-grid",
+        "marquee_strip": "editorial-marquee-strip"
+      }
+    },
+    "6_waitlist_and_founder_note": {
+      "section_id": "waitlist",
+      "headline": "Be first to protect your integrations",
+      "subheadline": "We are onboarding early engineering teams in weekly batches. Zero spam. Pure engineering telemetry.",
+      "waitlist_box": {
+        "input_placeholder": "Enter your work email (e.g., dev@yourcompany.in)",
+        "button_label": "Join Waitlist & Secure Batch Access",
+        "badge_text": "Batch #3 Onboarding — 48 spots remaining"
+      },
+      "founder_note": {
+        "title": "A Note From The Founder",
+        "author": "Aniket S. (20-year-old Operations Analyst & Systems Builder, Bengaluru)",
+        "body": "Three months ago, a silent Razorpay webhook error dropped ₹2.4 Lakhs worth of orders on a Friday night. Our team found out 14 hours later when angry customers flooded Twitter. When I dug into GitHub issues, Reddit r/developersIndia, and Indian tech Slack groups, I found hundreds of devs suffering from the exact same silent drops on Cashfree, Shiprocket, and MSG91. Global tools like Datadog don't care about DLT SMS templates or RBI auto-debit caps over ₹15,000. That's why I'm building Sentinel. Honest, deep, India-native API telemetry so you never lose revenue to an undocumented break again.",
+        "signature": "Aniket S. — Founder, Sentinel"
+      },
+      "testids": {
+        "waitlist_section": "waitlist-section",
+        "waitlist_email_input": "waitlist-email-input",
+        "waitlist_submit_button": "waitlist-submit-button",
+        "waitlist_success_message": "waitlist-success-message",
+        "founder_note_card": "founder-note-card"
+      }
+    },
+    "7_footer": {
+      "section_id": "footer",
+      "layout": "Minimalist Terminal Footer",
+      "elements": [
+        "Sentinel Brand Mark & System Status: 'All Mumbai Watchers Operational (99.99% Uptime)'",
+        "Copyright: '© 2026 Sentinel Technologies India. Built for Indian Developers.'",
+        "Minimal nav links: Product, How it works, Built for India, Waitlist, System Status",
+        "Scroll to top action"
+      ],
+      "testids": {
+        "footer_section": "footer-section",
+        "footer_system_status": "footer-system-status",
+        "footer_scroll_top_button": "footer-scroll-top-button"
+      }
+    }
+  },
+  "motion_and_interactions": {
+    "smooth_scrolling": "Lenis library initialization with dampening factor 0.1, smoothWheel true",
+    "framer_motion_variants": {
+      "stagger_container": {
+        "hidden": { "opacity": 0 },
+        "visible": {
+          "opacity": 1,
+          "transition": { "staggerChildren": 0.12, "delayChildren": 0.05 }
+        }
+      },
+      "kinetic_line_reveal": {
+        "hidden": { "opacity": 0, "y": 30 },
+        "visible": {
+          "opacity": 1,
+          "y": 0,
+          "transition": { "duration": 0.7, "ease": [0.215, 0.61, 0.355, 1] }
+        }
+      },
+      "card_hover_lift": {
+        "rest": { "scale": 1, "borderColor": "rgba(255,255,255,0.08)", "y": 0 },
+        "hover": { "scale": 1.015, "borderColor": "rgba(245,158,11,0.5)", "y": -4, "transition": { "duration": 0.25 } }
+      }
+    },
+    "alert_feed_ticker": "Interval based shift animating live mock incident items with amber highlight glow pulse",
+    "prefers_reduced_motion": "All transform and motion effects fall back to instant opacity 1 for users with prefers-reduced-motion media query"
+  },
+  "component_specs": {
+    "ProviderPill": "Monospace text badge with subtle dot indicator. Active amber hover glow and tooltip describing specific monitored Indian API failure cases.",
+    "LiveAlertCard": "Dark terminal frame with window controls (red/yellow/green dots), pulse header 'LIVE_MUMBAI_TELEMETRY', scrollable alert items with severity tag, payload diff accordion.",
+    "WaitlistForm": "High-contrast form wrapper with glowing border on focus, client-side email regex validation, instant simulated submission feedback displaying batch queue position (e.g. 'You are #142 in Batch 3 access queue'), and backend POST integration to `/api/waitlist`.",
+    "FounderNote": "Styled quotation card with amber left border accent, handwritten style signature tag, and verified builder badge."
+  },
+  "accessibility_and_testing": {
+    "contrast_compliance": "High contrast APCA verified (Text #F9FAFB on #08090E canvas ratio > 14:1, Amber #F59E0B on dark surface ratio > 7:1)",
+    "interactive_states": "All buttons & input fields must explicitly set text color on focus/hover (e.g. hover:text-amber-300 focus:ring-2 focus:ring-amber-500)",
+    "data_testid_requirement": "Every interactive and section container MUST contain explicit data-testid attribute in kebab-case format as outlined in section_by_section_blueprints."
+  },
+  "instructions_to_main_agent": [
+    "Execute phase-by-phase implementation strictly using React JS (.js files).",
+    "Install required dependencies: yarn add framer-motion lenis @phosphor-icons/react lucide-react canvas-confetti sonner",
+    "Implement smooth scrolling using Lenis in App.js or main entry point.",
+    "Load Google Fonts 'Outfit', 'DM Sans', and 'JetBrains Mono' in index.html or index.css.",
+    "Build backend FastAPI endpoint `/api/waitlist` to accept POST requests `{ email: string }` and persist to a simple JSON/SQLite store.",
+    "Ensure Waitlist email capture works in both Hero section and Waitlist section seamlessly.",
+    "Do NOT include fake testimonials, fake user numbers, or generic stock photos. Keep it purely code/telemetry aesthetic.",
+    "Include live interactive mock alert card in the Hero section with dynamic alert updates every few seconds.",
+    "Verify all `data-testid` attributes match the specified blueprint keys."
+  ]
+}
