@@ -41,8 +41,8 @@ const ALERTS = [
 ];
 
 const SEVERITY = {
-  CRITICAL: "text-red-400 border-red-500/40 bg-red-500/10",
-  WARNING: "text-amber-400 border-amber-500/40 bg-amber-500/10",
+  CRITICAL: "text-white border-white/40 bg-white/10",
+  WARNING: "text-zinc-400 border-zinc-500/40 bg-zinc-500/10",
 };
 
 export default function LiveAlertCard() {
@@ -59,22 +59,22 @@ export default function LiveAlertCard() {
   return (
     <div
       data-testid="hero-live-alert-card"
-      className="alert-glow relative rounded-xl border border-white/10 bg-[#0F111A]/90 backdrop-blur-xl overflow-hidden"
+      className="alert-glow relative rounded-xl border border-white/10 bg-[#0C0C0C]/90 backdrop-blur-xl overflow-hidden"
     >
       <div className="scanlines pointer-events-none absolute inset-0 opacity-20 z-10" />
 
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.08]">
         <div className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
-          <span className="h-2.5 w-2.5 rounded-full bg-amber-500/70" />
-          <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-zinc-600" />
+          <span className="h-2.5 w-2.5 rounded-full bg-zinc-500" />
+          <span className="h-2.5 w-2.5 rounded-full bg-zinc-300" />
         </div>
         <div className="flex items-center gap-2">
           <span className="relative flex h-1.5 w-1.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white" />
           </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-400/90">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/90">
             live · bom1-mumbai
           </span>
         </div>
@@ -91,7 +91,7 @@ export default function LiveAlertCard() {
                 transition={{ duration: 0.45, ease: [0.215, 0.61, 0.355, 1] }}
                 className={`rounded-lg border p-3 transition-[border-color,background-color,opacity] duration-500 ${
                   isActive
-                    ? "border-amber-500/50 bg-amber-500/[0.05] opacity-100"
+                    ? "border-white/40 bg-white/[0.05] opacity-100"
                     : "border-white/[0.06] bg-white/[0.02] opacity-55"
                 }`}
               >
@@ -123,7 +123,7 @@ export default function LiveAlertCard() {
                     <p className="mt-1.5 font-mono text-[11px] leading-relaxed text-zinc-400">
                       {a.details}
                     </p>
-                    <p className="mt-1.5 font-mono text-[11px] text-amber-300/90">
+                    <p className="mt-1.5 font-mono text-[11px] text-zinc-200">
                       impact → {a.impact}
                     </p>
                   </motion.div>
@@ -138,7 +138,7 @@ export default function LiveAlertCard() {
         <span className="font-mono text-[10px] text-zinc-600">
           7 providers · 214 watch rules
         </span>
-        <span className="font-mono text-[10px] text-emerald-400">
+        <span className="font-mono text-[10px] text-zinc-400">
           sentineld: healthy
         </span>
       </div>

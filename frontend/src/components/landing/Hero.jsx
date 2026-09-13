@@ -3,10 +3,10 @@ import WaitlistForm from "./WaitlistForm";
 import LiveAlertCard from "./LiveAlertCard";
 
 const LINES = [
-  { text: "Your Razorpay integration", amber: false },
-  { text: "just broke.", amber: true },
-  { text: "You'll find out in 3 hours.", amber: false },
-  { text: "We'll tell you in 30 seconds.", amber: true },
+  { text: "Your Razorpay integration", accent: false },
+  { text: "just broke.", accent: true },
+  { text: "You'll find out in 3 hours.", accent: false },
+  { text: "We'll tell you in 30 seconds.", accent: true },
 ];
 
 const EASE = [0.215, 0.61, 0.355, 1];
@@ -34,7 +34,7 @@ export default function Hero() {
               transition={{ duration: 0.6, ease: EASE }}
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 mb-8"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+              <span className="h-1.5 w-1.5 rounded-full bg-white" />
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-400">
                 API monitoring · built for India
               </span>
@@ -47,7 +47,7 @@ export default function Hero() {
               {LINES.map((line, i) => (
                 <span key={i} className="block overflow-hidden pb-1 -mb-1">
                   <motion.span
-                    className={`block ${line.amber ? "text-gradient-amber" : ""}`}
+                    className={`block ${line.accent ? "text-gradient-silver" : ""}`}
                     initial={{ y: "110%" }}
                     animate={{ y: 0 }}
                     transition={{

@@ -36,7 +36,7 @@ export default function WaitlistForm({
         particleCount: 90,
         spread: 70,
         origin: { y: 0.8 },
-        colors: ["#F59E0B", "#FDE68A", "#ffffff"],
+        colors: ["#FFFFFF", "#D4D4D8", "#52525B"],
         disableForReducedMotion: true,
       });
     } catch (err) {
@@ -55,10 +55,10 @@ export default function WaitlistForm({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.215, 0.61, 0.355, 1] }}
         data-testid={successTestId}
-        className="rounded-xl border border-amber-500/40 bg-amber-500/[0.06] p-5"
+        className="rounded-xl border border-white/25 bg-white/[0.04] p-5"
       >
         <div className="flex items-start gap-3">
-          <CheckCircle2 className="text-amber-400 mt-0.5 shrink-0" size={20} />
+          <CheckCircle2 className="text-white mt-0.5 shrink-0" size={20} />
           <div>
             <p className="font-display font-semibold text-white">
               {result.status === "already_registered"
@@ -67,9 +67,9 @@ export default function WaitlistForm({
             </p>
             <p className="text-sm text-zinc-400 mt-1 leading-relaxed">
               Queue position{" "}
-              <span className="font-mono text-amber-300">#{result.position}</span>{" "}
+              <span className="font-mono text-white">#{result.position}</span>{" "}
               · access batch{" "}
-              <span className="font-mono text-amber-300">{result.batch}</span>.
+              <span className="font-mono text-white">{result.batch}</span>.
               We onboard in weekly batches — expect a personal email from the
               founder.
             </p>
@@ -92,17 +92,17 @@ export default function WaitlistForm({
           onChange={(e) => setEmail(e.target.value)}
           placeholder={placeholder}
           data-testid={inputTestId}
-          className={`flex-1 rounded-lg bg-[#0F111A] border border-white/10 px-4 ${
+          className={`flex-1 rounded-lg bg-[#0C0C0C] border border-white/10 px-4 ${
             large ? "py-4 text-base" : "py-3 text-sm"
-          } text-white placeholder:text-zinc-600 font-mono focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500/60 transition-[box-shadow,border-color] duration-200`}
+          } text-white placeholder:text-zinc-600 font-mono focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 transition-[box-shadow,border-color] duration-200`}
         />
         <button
           type="submit"
           disabled={state === "loading"}
           data-testid={buttonTestId}
-          className={`inline-flex items-center justify-center gap-2 rounded-lg bg-amber-500 px-6 ${
+          className={`inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 ${
             large ? "py-4 text-base" : "py-3 text-sm"
-          } font-display font-semibold text-[#08090E] hover:bg-amber-400 hover:shadow-[0_0_28px_rgba(245,158,11,0.45)] disabled:opacity-60 transition-[background-color,box-shadow] duration-300 whitespace-nowrap`}
+          } font-display font-semibold text-black hover:bg-zinc-200 hover:shadow-[0_0_28px_rgba(255,255,255,0.3)] disabled:opacity-60 transition-[background-color,box-shadow] duration-300 whitespace-nowrap`}
         >
           {state === "loading" ? (
             <Loader2 size={18} className="animate-spin" />
@@ -120,9 +120,9 @@ export default function WaitlistForm({
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mt-2 text-sm text-red-400 font-mono"
+            className="mt-2 text-sm text-zinc-300 font-mono"
           >
-            {error}
+            error → {error}
           </motion.p>
         )}
       </AnimatePresence>

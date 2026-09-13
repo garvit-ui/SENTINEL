@@ -56,7 +56,7 @@ export default function Problem() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-amber-400/90 mb-4">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">
             01 / The Problem
           </p>
           <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white max-w-2xl">
@@ -81,10 +81,10 @@ export default function Problem() {
               variants={item}
               whileHover={{ y: -4 }}
               data-testid={p.testid}
-              className="card-shine group rounded-xl border border-white/[0.08] bg-[#0F111A] p-6 sm:p-8 hover:border-amber-500/40 transition-[border-color] duration-300"
+              className="card-shine group rounded-xl border border-white/[0.08] bg-[#0C0C0C] p-6 sm:p-8 hover:border-white/30 transition-[border-color] duration-300"
             >
               <div className="flex items-center justify-between">
-                <div className="rounded-lg border border-white/10 bg-white/[0.03] p-2.5 text-amber-400 group-hover:border-amber-500/40 transition-colors duration-300">
+                <div className="rounded-lg border border-white/10 bg-white/[0.03] p-2.5 text-white group-hover:border-white/40 transition-colors duration-300">
                   <p.icon size={20} strokeWidth={1.8} />
                 </div>
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">

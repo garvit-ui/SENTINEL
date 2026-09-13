@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="h-2 w-2 rounded-full bg-amber-500" />
+              <span className="h-2 w-2 rounded-full bg-white" />
               <span className="font-display font-bold text-white tracking-tight">
                 SENTINEL
               </span>
@@ -22,14 +22,14 @@ export default function Footer() {
           </div>
 
           <nav className="flex flex-wrap items-center gap-x-8 gap-y-3">
-            <a href="#problem" className="text-sm text-zinc-500 hover:text-amber-300 transition-colors">Product</a>
-            <a href="#how-it-works" className="text-sm text-zinc-500 hover:text-amber-300 transition-colors">How it works</a>
-            <a href="#built-for-india" className="text-sm text-zinc-500 hover:text-amber-300 transition-colors">Built for India</a>
-            <a href="#waitlist" className="text-sm text-zinc-500 hover:text-amber-300 transition-colors">Waitlist</a>
+            <a href="#problem" className="text-sm text-zinc-500 hover:text-white transition-colors">Product</a>
+            <a href="#how-it-works" className="text-sm text-zinc-500 hover:text-white transition-colors">How it works</a>
+            <a href="#built-for-india" className="text-sm text-zinc-500 hover:text-white transition-colors">Built for India</a>
+            <a href="#waitlist" className="text-sm text-zinc-500 hover:text-white transition-colors">Waitlist</a>
             <button
               data-testid="footer-scroll-top-button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-amber-300 transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-white transition-colors"
               aria-label="Scroll to top"
             >
               <ArrowUp size={14} />
@@ -46,7 +46,7 @@ export default function Footer() {
             data-testid="footer-system-status"
             className="font-mono text-[11px] text-zinc-600 flex items-center gap-2"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <span className="h-1.5 w-1.5 rounded-full bg-white" />
             system_status: all watchers nominal
           </p>
         </div>

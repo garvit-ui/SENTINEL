@@ -6,25 +6,25 @@
 
 @layer base {
     :root {
-        --background: 225 30% 4%;
-        --foreground: 220 13% 91%;
-        --card: 224 25% 7%;
-        --card-foreground: 220 13% 91%;
-        --popover: 224 25% 7%;
-        --popover-foreground: 220 13% 91%;
-        --primary: 38 92% 50%;
-        --primary-foreground: 224 47% 6%;
-        --secondary: 224 25% 11%;
-        --secondary-foreground: 220 13% 91%;
-        --muted: 224 20% 12%;
-        --muted-foreground: 220 9% 62%;
-        --accent: 38 92% 50%;
-        --accent-foreground: 224 47% 6%;
-        --destructive: 0 84% 60%;
+        --background: 0 0% 3%;
+        --foreground: 0 0% 91%;
+        --card: 0 0% 6%;
+        --card-foreground: 0 0% 91%;
+        --popover: 0 0% 6%;
+        --popover-foreground: 0 0% 91%;
+        --primary: 0 0% 100%;
+        --primary-foreground: 0 0% 4%;
+        --secondary: 0 0% 10%;
+        --secondary-foreground: 0 0% 91%;
+        --muted: 0 0% 11%;
+        --muted-foreground: 0 0% 62%;
+        --accent: 0 0% 100%;
+        --accent-foreground: 0 0% 4%;
+        --destructive: 0 0% 65%;
         --destructive-foreground: 0 0% 98%;
         --border: 0 0% 100% / 0.08;
         --input: 0 0% 100% / 0.12;
-        --ring: 38 92% 50%;
+        --ring: 0 0% 100%;
         --radius: 0.5rem;
     }
 }
@@ -37,7 +37,7 @@
         scroll-behavior: auto;
     }
     body {
-        @apply bg-[#08090E] text-zinc-200 font-sans antialiased;
+        @apply bg-[#080808] text-zinc-200 font-sans antialiased;
         font-optical-sizing: auto;
     }
 }
@@ -55,13 +55,13 @@
 
 .grid-bg {
     background-image:
-        linear-gradient(to right, rgba(31, 41, 55, 0.18) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(31, 41, 55, 0.18) 1px, transparent 1px);
+        linear-gradient(to right, rgba(63, 63, 70, 0.22) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(63, 63, 70, 0.22) 1px, transparent 1px);
     background-size: 4rem 4rem;
 }
 
 .hero-glow {
-    background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, rgba(8, 9, 14, 0) 70%);
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.07) 0%, rgba(8, 8, 8, 0) 70%);
 }
 
 .scanlines {
@@ -74,15 +74,15 @@
     );
 }
 
-.text-gradient-amber {
-    background: linear-gradient(180deg, #FFFFFF 0%, #F59E0B 100%);
+.text-gradient-silver {
+    background: linear-gradient(180deg, #FFFFFF 0%, #8E8E93 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
 .card-shine {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 @keyframes marquee-scroll {
@@ -99,8 +99,8 @@
 }
 
 @keyframes pulse-dot {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
-    50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.45); }
+    50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
 }
 
 .pulse-dot {
@@ -108,8 +108,8 @@
 }
 
 @keyframes alert-glow {
-    0%, 100% { box-shadow: 0 0 24px rgba(245, 158, 11, 0.12); }
-    50% { box-shadow: 0 0 40px rgba(245, 158, 11, 0.28); }
+    0%, 100% { box-shadow: 0 0 24px rgba(255, 255, 255, 0.08); }
+    50% { box-shadow: 0 0 44px rgba(255, 255, 255, 0.18); }
 }
 
 .alert-glow {

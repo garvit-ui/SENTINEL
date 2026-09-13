@@ -47,7 +47,7 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       data-testid="how-it-works-section"
-      className="relative py-20 sm:py-28 lg:py-32 border-t border-white/[0.06] bg-[#0A0C12]"
+      className="relative py-20 sm:py-28 lg:py-32 border-t border-white/[0.06] bg-[#0A0A0A]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -56,7 +56,7 @@ export default function HowItWorks() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1] }}
         >
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-amber-400/90 mb-4">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">
             02 / How It Works
           </p>
           <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white max-w-2xl">
@@ -76,16 +76,16 @@ export default function HowItWorks() {
               key={s.num}
               variants={item}
               data-testid={`step-card-${s.num}`}
-              className="group relative rounded-xl border border-white/[0.08] bg-[#0F111A] p-6 hover:border-amber-500/40 transition-[border-color] duration-300"
+              className="group relative rounded-xl border border-white/[0.08] bg-[#0C0C0C] p-6 hover:border-white/30 transition-[border-color] duration-300"
             >
               <div className="flex items-baseline justify-between">
-                <span className="font-mono text-4xl font-bold text-white/[0.08] group-hover:text-amber-500/30 transition-colors duration-300">
+                <span className="font-mono text-4xl font-bold text-white/[0.08] group-hover:text-white/25 transition-colors duration-300">
                   {s.num}
                 </span>
                 <s.icon
                   size={20}
                   strokeWidth={1.8}
-                  className="text-zinc-500 group-hover:text-amber-400 transition-colors duration-300"
+                  className="text-zinc-500 group-hover:text-white transition-colors duration-300"
                 />
               </div>
               <h3 className="mt-5 font-display font-semibold text-lg text-zinc-100">

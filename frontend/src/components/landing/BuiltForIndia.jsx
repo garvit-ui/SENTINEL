@@ -38,12 +38,12 @@ export default function BuiltForIndia() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-10"
         >
           <div className="lg:col-span-5">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-amber-400/90 mb-4">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">
               03 / Built for Indian Developers
             </p>
             <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white">
               Global tools don't cover Indian providers.{" "}
-              <span className="text-gradient-amber">Sentinel lives here.</span>
+              <span className="text-gradient-silver">Sentinel lives here.</span>
             </h2>
           </div>
           <div className="lg:col-span-7 lg:pt-10">
@@ -70,13 +70,13 @@ export default function BuiltForIndia() {
           {PROVIDERS.map((p) => (
             <div
               key={p.name}
-              className="group rounded-lg border border-white/[0.08] bg-[#0F111A] p-4 hover:border-amber-500/40 transition-[border-color] duration-300"
+              className="group rounded-lg border border-white/[0.08] bg-[#0C0C0C] p-4 hover:border-white/30 transition-[border-color] duration-300"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-sm font-semibold text-zinc-100 group-hover:text-amber-300 transition-colors duration-300">
+                <span className="font-mono text-sm font-semibold text-zinc-100 group-hover:text-white transition-colors duration-300">
                   {p.name}
                 </span>
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-white" />
               </div>
               <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-zinc-600">
                 {p.cat}
@@ -87,7 +87,7 @@ export default function BuiltForIndia() {
             </div>
           ))}
           <div className="rounded-lg border border-dashed border-white/[0.12] p-4 flex items-center gap-2.5 text-zinc-500">
-            <MapPin size={16} className="text-amber-500/70 shrink-0" />
+            <MapPin size={16} className="text-zinc-400 shrink-0" />
             <p className="text-xs leading-relaxed">
               Monitored from Indian region nodes — the latency your users
               actually experience.
@@ -106,7 +106,7 @@ export default function BuiltForIndia() {
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-zinc-500">
                 {m}
               </span>
-              <span className="font-mono text-xs text-amber-500/60">//</span>
+              <span className="font-mono text-xs text-zinc-700">//</span>
             </span>
           ))}
         </div>

@@ -9,7 +9,7 @@ export default function WaitlistSection() {
     <section
       id="waitlist"
       data-testid="waitlist-section"
-      className="relative py-20 sm:py-28 lg:py-36 border-t border-white/[0.06] bg-[#0A0C12] overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-36 border-t border-white/[0.06] bg-[#0A0A0A] overflow-hidden"
     >
       <div className="hero-glow absolute inset-0 opacity-70" />
 
@@ -22,7 +22,7 @@ export default function WaitlistSection() {
             transition={{ duration: 0.7, ease: EASE }}
             className="lg:col-span-7"
           >
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-amber-400/90 mb-4">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">
               04 / Early Access
             </p>
             <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white">
@@ -55,9 +55,9 @@ export default function WaitlistSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
-            className="lg:col-span-5 rounded-xl border border-white/[0.08] border-l-2 border-l-amber-500 bg-[#0F111A] p-6 sm:p-8"
+            className="lg:col-span-5 rounded-xl border border-white/[0.08] border-l-2 border-l-white bg-[#0C0C0C] p-6 sm:p-8"
           >
-            <Quote size={22} className="text-amber-500/70" />
+            <Quote size={22} className="text-white/60" />
             <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
               A note from the founder
             </p>
@@ -72,8 +72,8 @@ export default function WaitlistSection() {
               every early signup.
             </p>
             <div className="mt-6 pt-5 border-t border-white/[0.08] flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full border border-amber-500/40 bg-amber-500/10 flex items-center justify-center">
-                <span className="font-mono text-xs font-bold text-amber-400">S</span>
+              <div className="h-9 w-9 rounded-full border border-white/30 bg-white/10 flex items-center justify-center">
+                <span className="font-mono text-xs font-bold text-white">S</span>
               </div>
               <div>
                 <p className="font-display font-semibold text-sm text-white">
