@@ -6,41 +6,41 @@ Professional SaaS landing page for a developer-tool startup: monitoring/alerting
 ## User Choices (confirmed)
 - Name: **Sentinel**
 - Waitlist: real backend + MongoDB persistence
-- Theme: dark-mode-first, alert-amber (#F59E0B), terminal aesthetic
+- Theme: pure black & white monochrome (user rejected amber as "too AI-looking" in iteration 2)
 - Hero: mock live alert dashboard card included
 - Founder note near waitlist (20-year-old ops analyst, India, data science background)
 - No fake testimonials/counts/logos; email capture is the single dominant CTA
 
 ## Architecture
-- **Frontend**: React 19 + Tailwind, Outfit / DM Sans / JetBrains Mono, framer-motion (kinetic masked headline reveal, scroll reveals, parallax hero), lenis (momentum scrolling), canvas-confetti (signup success), sonner (toasts)
-- **Backend**: FastAPI, routes prefixed `/api`
-- **DB**: MongoDB via MONGO_URL/DB_NAME env, `waitlist` collection
+- **Frontend**: React 19 + Tailwind, Outfit / DM Sans / JetBrains Mono, framer-motion (kinetic masked headline reveal, scroll reveals, parallax hero), lenis (momentum scrolling), canvas-confetti (signup success), sonner (toasts), react-router (routes: /, /failures, /admin)
+- **Backend**: FastAPI, routes prefixed `/api`; JWT auth (bcrypt, httpOnly cookies, 15-min access + 7-day refresh, 5-attempt/15-min lockout); Emergent managed Resend email
+- **DB**: MongoDB via MONGO_URL/DB_NAME env — collections: `waitlist`, `users`, `login_attempts`
 
 ## API Endpoints
-- `POST /api/waitlist` — { email } → { status: joined|already_registered, position, batch }; dedupes by email; batch = 50 signups each
+- `POST /api/waitlist` — { email } → { status, position, batch }; dedupes; fires founder alert email (async, non-blocking)
 - `GET /api/waitlist/count` — total signup count
+- `POST /api/auth/login` · `POST /api/auth/logout` · `GET /api/auth/me` · `POST /api/auth/refresh`
+- `GET /api/admin/waitlist` (auth) — full signup list · `GET /api/admin/waitlist/export` (auth) — CSV download
 - `GET /api/` — health check
 
-## Sections (all implemented, 2026-07)
-1. Navbar — fixed glass, mono badge, Join Waitlist CTA, mobile drawer
-2. Hero — masked line-by-line kinetic headline, email capture, live cycling alert telemetry card (parallax)
-3. The Problem — 3 pain cards (silent webhooks, tier restrictions, SDK/RBI breaks)
-4. How It Works — 4 numbered manifesto steps
-5. Built for Indian Developers — 7 provider pills + slow editorial marquee
-6. Waitlist + Founder Note — large form, queue position on success, honest founder letter
-7. Footer — minimal, system status mono line, scroll-to-top
+## Pages
+1. `/` — landing: navbar, kinetic hero + live alert card, problem (3 pains), how-it-works (4 steps), built-for-India (7 provider pills + marquee), waitlist + founder note, footer
+2. `/failures` — Failure Library: 11 documented failure patterns (Razorpay, PhonePe, Cashfree, Shiprocket, Delhivery, MSG91, Gupshup), each with what/detect/real source links (razorpay docs + GitHub issues, PhonePe developer docs, Cashfree docs + GitHub, MSG91 help, Gupshup docs), provider + severity filters, waitlist CTA, per-page title/meta
+3. `/admin` — private waitlist admin: login, stats (total/batch/latest), full table, CSV export, logout
 
-## Verified (2026-07)
-- POST /api/waitlist join, duplicate handling, invalid email rejection, count — all via curl against production URL
-- Hero form e2e via browser: submit → success card with real queue position (#2) → confetti
-- Desktop (1920px) + mobile (390px) screenshots of all sections — no layout breakage
-- MOCKED: the hero alert feed is a styled simulation (as briefed); "system_status" footer line is decorative
+## Verified
+- Iteration 1 (2026-07): waitlist join/dupe/invalid via curl; hero form e2e with real queue position; desktop + mobile screenshots clean. Hero alert feed is MOCKED (styled simulation, as briefed).
+- Iteration 2 (2026-07): monochrome restyle (zero amber/emerald left); admin auth chain (wrong-password 401, login → cookies → /me → admin list + CSV export, 401 without auth); founder alert email verified live (202 Accepted, id=0efd5dc4); fixed axios refresh-interceptor infinite loop (_skipRefresh guard)
+- Iteration 3 (2026-07): /failures renders 11 entries; provider filter (razorpay→3) + severity combine (critical→2) verified; library waitlist form submits (position #4, alert email fired); navbar + footer "Library" links navigate correctly
 
 ## Personas
 - Backend developer at Indian D2C/e-commerce startup burned by Razorpay/Shiprocket failures
 - Engineering lead / CTO evaluating monitoring for India-specific API stack
 
+## Credentials
+- Admin: gayanteshsoni@gmail.com / S3nt!nel-W4tch#7Qx9Lm (see /app/memory/test_credentials.md)
+
 ## Backlog
 - P0: nothing blocking
-- P1: email notification to founder on new signup (Resend), waitlist export/admin view
-- P2: changelog/blog page, OpenGraph + favicon polish, OG preview image, real provider status page
+- P1: clear 4 test signups (dev1@testcompany.in, ui-test@startup.in, alert-test@d2cbrand.in, library-reader@fintech.in) before launch
+- P2: founder name/photo on founder note, OG image + favicon polish, grow Failure Library entries over time, real status page

@@ -26,6 +26,7 @@ export default function Footer() {
             <a href="#how-it-works" className="text-sm text-zinc-500 hover:text-white transition-colors">How it works</a>
             <a href="#built-for-india" className="text-sm text-zinc-500 hover:text-white transition-colors">Built for India</a>
             <a href="#waitlist" className="text-sm text-zinc-500 hover:text-white transition-colors">Waitlist</a>
+            <a href="/failures" data-testid="footer-library-link" className="text-sm text-zinc-500 hover:text-white transition-colors">Failure Library</a>
             <button
               data-testid="footer-scroll-top-button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

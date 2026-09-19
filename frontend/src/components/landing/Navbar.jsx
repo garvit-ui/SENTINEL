@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const LINKS = [
   { label: "Product", href: "#problem", testid: "nav-product-link" },
   { label: "How it works", href: "#how-it-works", testid: "nav-how-it-works-link" },
   { label: "Built for India", href: "#built-for-india", testid: "nav-built-for-india-link" },
+  { label: "Library", href: "/failures", testid: "nav-library-link", route: true },
 ];
 
 export default function Navbar() {
@@ -30,16 +32,27 @@ export default function Navbar() {
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
-          {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              data-testid={l.testid}
-              className="text-sm text-zinc-400 hover:text-white transition-colors duration-200"
-            >
-              {l.label}
-            </a>
-          ))}
+          {LINKS.map((l) =>
+            l.route ? (
+              <Link
+                key={l.href}
+                to={l.href}
+                data-testid={l.testid}
+                className="text-sm text-zinc-400 hover:text-white transition-colors duration-200"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                data-testid={l.testid}
+                className="text-sm text-zinc-400 hover:text-white transition-colors duration-200"
+              >
+                {l.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -71,16 +84,27 @@ export default function Navbar() {
             className="md:hidden overflow-hidden border-t border-white/[0.08] bg-[#0C0C0C]"
           >
             <div className="px-6 py-4 flex flex-col gap-1">
-              {LINKS.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="font-mono text-sm uppercase tracking-widest text-zinc-400 hover:text-white py-2.5 transition-colors"
-                >
-                  {l.label}
-                </a>
-              ))}
+              {LINKS.map((l) =>
+                l.route ? (
+                  <Link
+                    key={l.href}
+                    to={l.href}
+                    onClick={() => setOpen(false)}
+                    className="font-mono text-sm uppercase tracking-widest text-zinc-400 hover:text-white py-2.5 transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="font-mono text-sm uppercase tracking-widest text-zinc-400 hover:text-white py-2.5 transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                )
+              )}
               <a
                 href="#waitlist"
                 onClick={() => setOpen(false)}

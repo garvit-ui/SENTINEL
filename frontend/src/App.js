@@ -10,6 +10,7 @@ import BuiltForIndia from "@/components/landing/BuiltForIndia";
 import WaitlistSection from "@/components/landing/WaitlistSection";
 import Footer from "@/components/landing/Footer";
 import AdminPage from "@/pages/AdminPage";
+import FailureLibrary from "@/pages/FailureLibrary";
 
 function Landing() {
   return (
@@ -59,6 +60,7 @@ export default function App() {
       <div className="min-h-screen bg-[#080808] text-zinc-200 font-sans antialiased selection:bg-white/20 selection:text-white">
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/failures" element={<FailureLibrary />} />
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
         <Toaster theme="dark" position="bottom-center" />
